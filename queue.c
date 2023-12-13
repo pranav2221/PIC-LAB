@@ -1,33 +1,31 @@
 #include <stdio.h>  
   
 # define max 6  
-int queue[max];  // array declaration  
+int queue[max];    
 int front=-1;  
-int rear=-1;  
-// function to insert an element in a circular queue  
+int rear=-1;    
 void enqueue(int element)  
 {  
-    if(front==-1 && rear==-1)   // condition to check queue is empty  
+    if(front==-1 && rear==-1)   
     {  
         front=0;  
         rear=0;  
         queue[rear]=element;  
     }  
-    else if((rear+1)%max==front)  // condition to check queue is full  
+    else if((rear+1)%max==front)   
     {  
         printf("Queue is overflow..");  
     }  
     else  
     {  
-        rear=(rear+1)%max;       // rear is incremented  
-        queue[rear]=element;     // assigning a value to the queue at the rear position.  
+        rear=(rear+1)%max;        
+        queue[rear]=element;      
     }  
 }  
-  
-// function to delete the element from the queue  
+   
 int dequeue()  
 {  
-    if((front==-1) && (rear==-1))  // condition to check queue is empty  
+    if((front==-1) && (rear==-1))    
     {  
         printf("\nQueue is underflow..");  
     }  
@@ -43,7 +41,7 @@ else
    front=(front+1)%max;  
 }  
 }  
-// function to display the elements of a queue  
+ 
 void display()  
 {  
     int i=front;  
@@ -63,9 +61,9 @@ void display()
 }  
 int main()  
 {  
-    int choice=1,x;   // variables declaration  
+    int choice=1,x;   
       
-    while(choice<4 && choice!=0)   // while loop  
+    while(choice<4 && choice!=0)    
     {  
     printf("\n Press 1: Insert an element");  
     printf("\nPress 2: Delete an element");  
